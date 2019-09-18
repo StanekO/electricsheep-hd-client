@@ -6,9 +6,9 @@ ECHO ####################################
 CD /D %~dp0
 SET PATH=%SYSTEMROOT%\system32;%CD%\contrib\bin
 SET RUNPLAY=ruby play %*
-REM SET RUNDAEMON=daemon_windows.cmd /LOW
+SET RUNDAEMON=daemon_windows.cmd /LOW
 REM SET RUNDAEMON=daemon_windows.cmd --gpu --gpu-priority 1 --keep-frames /LOW || pause
-SET RUNDAEMON=daemon_windows_gpu_4k.cmd /LOW
+REM SET RUNDAEMON=daemon_windows_gpu_4k.cmd /LOW
 
 TASKLIST /FI "WINDOWTITLE EQ Electric Sheep *" | FIND /I "cmd.exe"
 IF "%errorlevel%"=="0" (
