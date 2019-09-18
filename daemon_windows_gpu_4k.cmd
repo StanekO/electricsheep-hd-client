@@ -4,6 +4,7 @@ ECHO  ###    GPU 4K renderings requires   ###
 ECHO  ### instaled http://fractorium.com/ ###
 ECHO  #######################################
 @ECHO ON
-cd %~p0
 title Electric Sheep GPU 4K daemon
-call daemon_windows.cmd --gpu
+REM TIMEOUT /T 600
+CD /D %~dp0
+call daemon_windows.cmd --gpu --gpu-priority 1 /LOW || pause
