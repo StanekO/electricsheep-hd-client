@@ -1,3 +1,8 @@
+@ECHO OFF
+ECHO ####################################
+ECHO ### designed for Screen Launcher ###
+ECHO ####################################
+
 CD /D %~dp0
 SET PATH=%SYSTEMROOT%\system32;%CD%\contrib\bin
 SET RUNPLAY=ruby play %*
@@ -6,7 +11,6 @@ REM SET RUNDAEMON=daemon_windows.cmd --gpu --gpu-priority 1 --keep-frames /LOW |
 SET RUNDAEMON=daemon_windows_gpu_4k.cmd /LOW
 
 TASKLIST /FI "WINDOWTITLE EQ Electric Sheep *" | FIND /I "cmd.exe"
-@ECHO OFF
 IF "%errorlevel%"=="0" (
 	ECHO ##########################################
 	ECHO ### Daemon found, run only screansaver ###
